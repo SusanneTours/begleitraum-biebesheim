@@ -65,7 +65,7 @@ const NEEDS=[
 $('#needs').innerHTML = NEEDS.map((n,i)=>`<div class="need"><span class="k">${i+1} · ${esc(n.t)}</span><span class="hear">${esc(n.hear)}</span><p>${esc(n.q)}</p><div class="help"><b>Im Team erfüllt, wenn …</b>${esc(n.fix)}</div><div class="help" style="background:#FAE6E6;margin-top:0"><b style="color:#CB0101">Woran man merkt, dass es fehlt</b>${esc(n.miss)}</div></div>`).join('');
 
 /* ---------- Startplan ---------- */
-const STEPS=["Meine Situation","Mein Team in der Veränderung","Erwartungen klären","Mein Führungskorridor","Fünf Grundbedürfnisse","Meine Matrix","Mein Gespräch","Meine ersten Schritte","Zusammenfassung"];
+const STEPS=["Meine Situation","Mein Team in der Veränderung","Erwartungen klären","Mein Führungskorridor","Fünf Grundbedürfnisse","Meine Matrix","Mein Gespräch","Meine nächsten Schritte","Zusammenfassung"];
 const QUADS=[
  {k:"b",t:"Kann und will",c:"qb"},
  {k:"a",t:"Kann, will gerade nicht",c:"qa"},
@@ -97,7 +97,7 @@ function stepBody(i){
       ${(p.team||[]).length<12?'<button class="btn ghost small" id="addTm">+ Person hinzufügen</button>':''}<h3 style="margin-top:20px">Dein Team auf einen Blick</h3><div id="mx">${matrix()}</div>`;
     case 6: return `<h3>Mein Gespräch</h3>${field('g.mit','Mit wem? (Kürzel)')}${field('g.anlass','Worum geht es?','',true)}${field('g.G','Ziel · Was soll am Ende klar sein?','',true)}${field('g.R','Realität · Wie sehe ich die Situation? Was vermute ich zur Sicht der anderen Person?','',true)}${field('g.O','Möglichkeiten · Welche Fragen stelle ich? Was biete ich an?','',true)}${field('g.W','Vereinbarung · Was soll bis wann passieren?','',true)}${field('g.einstieg','Mein erster Satz','Ich möchte heute mit dir über … sprechen.')}
       <h3 style="margin-top:22px">Falls es blockiert</h3>${field('g.weiss','Ich weiß …')}${field('g.wichtig','Mir ist wichtig …')}${field('g.offen','Ich bin offen …')}`;
-    case 7: return `<h3>Meine ersten Schritte</h3><p class="hint">Was tust du in den nächsten 30 Tagen? Möglichst konkret, mit Datum.</p>${field('s.1','Schritt 1')}${field('s.1w','Bis wann?')}${field('s.2','Schritt 2')}${field('s.2w','Bis wann?')}${field('s.3','Schritt 3')}${field('s.3w','Bis wann?')}${field('s.buddy','Mein Transfer-Buddy aus der Gruppe')}${field('s.satz','Mein wichtigster Satz aus den zwei Tagen','',true)}`;
+    case 7: return `<h3>Meine nächsten Schritte</h3><p class="hint">Was tust du in den nächsten 30 Tagen? Möglichst konkret, mit Datum.</p>${field('s.1','Schritt 1')}${field('s.1w','Bis wann?')}${field('s.2','Schritt 2')}${field('s.2w','Bis wann?')}${field('s.3','Schritt 3')}${field('s.3w','Bis wann?')}${field('s.buddy','Mein Transfer-Buddy aus der Gruppe')}${field('s.satz','Mein wichtigster Satz aus den zwei Tagen','',true)}`;
     case 8: return `<h3>Zusammenfassung</h3>${summary()}<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><button class="btn" id="pdf">Als PDF sichern</button><button class="btn ghost" id="cpy">Als Text kopieren</button></div><p class="hint" style="margin-top:10px">Beim PDF öffnet sich das Drucken-Fenster. Wähle dort „Als PDF sichern“.</p>`;
   }
 }
@@ -116,7 +116,7 @@ function summary(){
   const W=S.wandel||{}, D=S.druck||{};
   if(W.v||W.u||W.k||W.a) h+=`<h3>Meine Antwort auf VUKA</h3>${line('Vision',W.v)}${line('Verstehen',W.u)}${line('Klarheit',W.k)}${line('Agilität',W.a)}`;
   if(D.lassen||D.abgeben||D.planen) h+=`<h3>Meine Prioritäten</h3>${line('Das lasse ich',D.lassen)}${line('Das gebe ich ab',D.abgeben)}${line('Feste Zeit für',D.planen)}`;
-  h+=`<h3>Meine ersten Schritte</h3>${[1,2,3].map(n=>s[n]?line('Schritt '+n,s[n]+(s[n+'w']?' (bis '+s[n+'w']+')':'')):'').join('')}${line('Transfer-Buddy',s.buddy)}${line('Mein wichtigster Satz',s.satz)}`;
+  h+=`<h3>Meine nächsten Schritte</h3>${[1,2,3].map(n=>s[n]?line('Schritt '+n,s[n]+(s[n+'w']?' (bis '+s[n+'w']+')':'')):'').join('')}${line('Transfer-Buddy',s.buddy)}${line('Mein wichtigster Satz',s.satz)}`;
   return h;
 }
 function renderWiz(){
@@ -161,7 +161,7 @@ $('#sentences').innerHTML = SENT.map(([t,arr])=>`<div class="card"><h3>${esc(t)}
 $('#sentences').addEventListener('click',e=>{ const b=e.target.closest('[data-copy]'); if(b) copy(b.dataset.copy); });
 
 /* ---------- Nach dem Training ---------- */
-const WEEKS=[["e1","Woche 1","Mit deiner eigenen Führungskraft klären: Ziele, Spielraum, Entscheidungen."],["e2","Woche 1","Die Alltagsfragen deines Teams beantworten: Urlaub, Homeoffice, Erreichbarkeit."],["e3","Woche 2","Erwartungsgespräche führen, im Team oder einzeln."],["e4","Woche 2","Deinen Führungskorridor im Team vorstellen."],["e5","Woche 3","Regelmäßige Einzelgespräche einplanen und das erste führen."],["e6","Woche 3","Das aufgeschobene Gespräch führen, mit deinem Gesprächsplan."],["e7","Woche 4","Deine Matrix noch einmal anschauen: Wer hat sich bewegt?"],["e8","Woche 4","Deinem Transfer-Buddy schreiben: Was hat geklappt, was nicht?"]];
+const WEEKS=[["e1","Woche 1","Mit deiner eigenen Führungskraft klären: Ziele, Spielraum, Entscheidungen."],["e2","Woche 1","Die Alltagsfragen deines Teams beantworten: Urlaub, Homeoffice, Erreichbarkeit."],["e3","Woche 2","Erwartungsgespräche führen, im Team oder einzeln."],["e4","Woche 2","Deinen Führungskorridor im Team vorstellen."],["e5","Woche 3","Regelmäßige Einzelgespräche einplanen und das nächste führen."],["e6","Woche 3","Das aufgeschobene Gespräch führen, mit deinem Gesprächsplan."],["e7","Woche 4","Deine Matrix noch einmal anschauen: Wer hat sich bewegt?"],["e8","Woche 4","Deinem Transfer-Buddy schreiben: Was hat geklappt, was nicht?"]];
 const wk = S.weeks || (S.weeks = {});
 $('#checklist').innerHTML = `<h3>Deine nächsten 30 Tage</h3>` + WEEKS.map(([k,w,t])=>`<label class="check"><input type="checkbox" data-week="${k}" ${wk[k]?'checked':''}><span><b>${w}:</b> ${t}</span></label>`).join('');
 $('#checklist').querySelectorAll('[data-week]').forEach(c=>c.addEventListener('change',()=>{ wk[c.dataset.week]=c.checked; save(); }));
