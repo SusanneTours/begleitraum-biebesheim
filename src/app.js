@@ -163,7 +163,7 @@ $('#sentences').addEventListener('click',e=>{ const b=e.target.closest('[data-co
 /* ---------- Nach dem Training ---------- */
 const WEEKS=[["e1","Woche 1","Mit deiner eigenen Führungskraft klären: Ziele, Spielraum, Entscheidungen."],["e2","Woche 1","Die Alltagsfragen deines Teams beantworten: Urlaub, Homeoffice, Erreichbarkeit."],["e3","Woche 2","Erwartungsgespräche führen, im Team oder einzeln."],["e4","Woche 2","Deinen Führungskorridor im Team vorstellen."],["e5","Woche 3","Regelmäßige Einzelgespräche einplanen und das erste führen."],["e6","Woche 3","Das aufgeschobene Gespräch führen, mit deinem Gesprächsplan."],["e7","Woche 4","Deine Matrix noch einmal anschauen: Wer hat sich bewegt?"],["e8","Woche 4","Deinem Transfer-Buddy schreiben: Was hat geklappt, was nicht?"]];
 const wk = S.weeks || (S.weeks = {});
-$('#checklist').innerHTML = `<h3>Deine ersten 30 Tage</h3>` + WEEKS.map(([k,w,t])=>`<label class="check"><input type="checkbox" data-week="${k}" ${wk[k]?'checked':''}><span><b>${w}:</b> ${t}</span></label>`).join('');
+$('#checklist').innerHTML = `<h3>Deine nächsten 30 Tage</h3>` + WEEKS.map(([k,w,t])=>`<label class="check"><input type="checkbox" data-week="${k}" ${wk[k]?'checked':''}><span><b>${w}:</b> ${t}</span></label>`).join('');
 $('#checklist').querySelectorAll('[data-week]').forEach(c=>c.addEventListener('change',()=>{ wk[c.dataset.week]=c.checked; save(); }));
 
 /* ---------- Folien ---------- */
