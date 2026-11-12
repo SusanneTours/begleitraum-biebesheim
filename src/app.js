@@ -4,6 +4,7 @@ const ERGEBNISSE = [
   { titel: "Rückblick auf Tag 1", bild: "fotos/rueckblick-tag1-a.jpg", orte: ["rueckblick"] },
   { titel: "Rückblick auf Tag 1", bild: "fotos/rueckblick-tag1-b.jpg", orte: ["rueckblick"] },
   { titel: "früher: mehr von oben herab", bild: "fotos/fuehrung-frueher-heute.jpg", orte: ["rollenwechsel"], text: "Führung früher und heute, erklärt am T: Der Querstrich steht für Wissen in der Breite, der Längsstrich für Wissen in der Tiefe." },
+  { titel: "Führung bei uns", bild: "fotos/fuehrung-bei-uns.jpg", orte: ["rollenwechsel"] },
   { titel: "Erwartungen an deine Mitarbeiter", bild: "fotos/erwartungen.jpg", orte: ["erwartungen"] },
   { titel: "Skill und Will", bild: "fotos/skillwill-flipchart.jpg", orte: ["skillwill"] },
   { titel: "Euer Führungsverhalten in der Matrix", bild: "fotos/skillwill-pinnwand.jpg", orte: ["skillwill"] },
@@ -18,6 +19,8 @@ const ERGEBNISSE = [
   { titel: "Gesprächsstruktur", bild: "fotos/gespraechsstruktur.jpg", orte: ["grow"] },
   { titel: "Das kann ich gar nicht nachvollziehen!", bild: "fotos/nachvollziehen.jpg", orte: ["schwierig", "klaerung"] },
   { titel: "Satz-Starter für Kritikgespräche", bild: "fotos/satzstarter.jpg", orte: ["schwierig", "klaerung"] },
+  { titel: "Ich weiss … Mir ist wichtig … Ich bin offen …", bild: "fotos/ich-weiss.jpg", orte: ["schwierig", "klaerung"] },
+  { titel: "Kollegiale Fallberatung", bild: "fotos/kollegiale-fallberatung.jpg", orte: ["schwierig"], text: "So sind wir vorgegangen, als wir in der Gruppe einen Fall gemeinsam beraten haben." },
   { titel: "Eisenhower-Matrix", bild: "fotos/eisenhower.jpg", orte: ["druck"] },
 ];
 const FOLIEN = 80; // Anzahl der Folienbilder in folien/
