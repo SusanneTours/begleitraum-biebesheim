@@ -1,7 +1,23 @@
 /* ---------- Fotos für "Unsere Ergebnisse": Dateien in den Ordner fotos/ legen und hier eintragen ----------
    orte: kurve, perspektive, erwartungen, korridor, beduerfnisse, skillwill, augenhoehe, fragen, grow, schwierig  */
 const ERGEBNISSE = [
-  // { titel: "Unsere Veränderungskurve", bild: "fotos/kurve.jpg", orte: ["kurve"] },
+  { titel: "Rückblick auf Tag 1", bild: "fotos/rueckblick-tag1-a.jpg", orte: ["rueckblick"] },
+  { titel: "Rückblick auf Tag 1", bild: "fotos/rueckblick-tag1-b.jpg", orte: ["rueckblick"] },
+  { titel: "Erwartungen an deine Mitarbeiter", bild: "fotos/erwartungen.jpg", orte: ["erwartungen"] },
+  { titel: "Skill und Will", bild: "fotos/skillwill-flipchart.jpg", orte: ["skillwill"] },
+  { titel: "Euer Führungsverhalten in der Matrix", bild: "fotos/skillwill-pinnwand.jpg", orte: ["skillwill"] },
+  { titel: "Eure Matrix, ergänzt mit Fragen", bild: "fotos/skillwill-fragen.jpg", orte: ["skillwill", "fragen"] },
+  { titel: "Kompetenzstufen", bild: "fotos/kompetenzstufen.jpg", orte: ["skillwill"] },
+  { titel: "Bindung", bild: "fotos/bindung.jpg", orte: ["beduerfnisse"] },
+  { titel: "Orientierung und Kontrolle", bild: "fotos/orientierung.jpg", orte: ["beduerfnisse"] },
+  { titel: "Selbstwertschutz / Erhöhung", bild: "fotos/selbstwert.jpg", orte: ["beduerfnisse"] },
+  { titel: "Lustgewinn / Unlustvermeidung", bild: "fotos/lustgewinn.jpg", orte: ["beduerfnisse"] },
+  { titel: "Ich bin o.k., du bist o.k.", bild: "fotos/ich-bin-ok.jpg", orte: ["augenhoehe"] },
+  { titel: "Brave Dialog", bild: "fotos/brave-dialog.jpg", orte: ["haltung"] },
+  { titel: "Gesprächsstruktur", bild: "fotos/gespraechsstruktur.jpg", orte: ["grow"] },
+  { titel: "Das kann ich gar nicht nachvollziehen!", bild: "fotos/nachvollziehen.jpg", orte: ["schwierig", "klaerung"] },
+  { titel: "Satz-Starter für Kritikgespräche", bild: "fotos/satzstarter.jpg", orte: ["schwierig", "klaerung"] },
+  { titel: "Eisenhower-Matrix", bild: "fotos/eisenhower.jpg", orte: ["druck"] },
 ];
 const FOLIEN = 80; // Anzahl der Folienbilder in folien/
 

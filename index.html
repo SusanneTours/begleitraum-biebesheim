@@ -958,6 +958,7 @@ details.more .b{padding:0 20px 16px}
   <div class="card"><h3>Das Gegenteil von Schweigen</h3><p>Das Gegenteil von Schweigen ist nicht Reden, sondern aufrichtiger Dialog. Wertschätzung heißt nicht, immer nett zu sein. Es heißt, aufrichtig zuzuhören und den anderen ernst zu nehmen.</p></div>
   <p class="foot">Nach Christiane Windhausen und Tobias Grewe (Brave Dialogue Process)</p>
   <a class="btn" href="#gefuehlskompass">◎ Zum Gefühlskompass</a>
+  <div class="unsere-fotos" data-ort="haltung"></div>
   <div style="height:20px"></div>
 </section>
 
@@ -975,6 +976,7 @@ details.more .b{padding:0 20px 16px}
   <p style="margin-bottom:0">Sprich in Ich-Botschaften. Du-Botschaften wie „Du bist immer …“ oder „Warum hast du nicht …“ kommen als Angriff an.</p></div>
   <div class="card"><h3>Satzstarter für das Kritikgespräch</h3><ul class="clean"><li>„Ich möchte mit dir über etwas sprechen, das mir wichtig ist.“</li><li>„Wir hatten vereinbart, dass … Das ist nicht passiert.“</li><li>„Was ist aus deiner Sicht passiert?“</li><li>„Was brauchst du, damit es beim nächsten Mal klappt?“</li><li>„Lass uns festhalten, was wir jetzt vereinbaren.“</li></ul></div>
   <a class="btn ghost" href="#grow">→ Gespräch vorbereiten mit GROW</a>
+  <div class="unsere-fotos" data-ort="klaerung"></div>
   <div style="height:20px"></div>
 </section>
 
@@ -1028,7 +1030,7 @@ details.more .b{padding:0 20px 16px}
 
 <!-- ERGEBNISSE -->
 <section class="page" id="p-ergebnisse">
-  <div class="hero" style="background-image:url('bilder/ergebnisse.jpg');--img:url('bilder/ergebnisse.jpg')"><div class="in"><span class="eyebrow">Für dich</span><h2>Unsere Ergebnisse</h2><p>Die Fotos unserer Flipcharts und Pinnwände aus den zwei Tagen.</p></div></div>
+  <div class="hero" style="background-image:url('bilder/ergebnisse.jpg');--img:url('bilder/ergebnisse.jpg')"><div class="in"><span class="eyebrow">Für dich</span><h2>Unsere Ergebnisse</h2><p>Die Fotos eurer Flipcharts und Pinnwände aus den zwei Tagen. Tipp aufs Foto, dann wird es groß.</p></div></div>
   <div id="gallery"></div>
   <div style="height:20px"></div>
 </section>
@@ -1130,7 +1132,23 @@ details.more .b{padding:0 20px 16px}
 /* ---------- Fotos für "Unsere Ergebnisse": Dateien in den Ordner fotos/ legen und hier eintragen ----------
    orte: kurve, perspektive, erwartungen, korridor, beduerfnisse, skillwill, augenhoehe, fragen, grow, schwierig  */
 const ERGEBNISSE = [
-  // { titel: "Unsere Veränderungskurve", bild: "fotos/kurve.jpg", orte: ["kurve"] },
+  { titel: "Rückblick auf Tag 1", bild: "fotos/rueckblick-tag1-a.jpg", orte: ["rueckblick"] },
+  { titel: "Rückblick auf Tag 1", bild: "fotos/rueckblick-tag1-b.jpg", orte: ["rueckblick"] },
+  { titel: "Erwartungen an deine Mitarbeiter", bild: "fotos/erwartungen.jpg", orte: ["erwartungen"] },
+  { titel: "Skill und Will", bild: "fotos/skillwill-flipchart.jpg", orte: ["skillwill"] },
+  { titel: "Euer Führungsverhalten in der Matrix", bild: "fotos/skillwill-pinnwand.jpg", orte: ["skillwill"] },
+  { titel: "Eure Matrix, ergänzt mit Fragen", bild: "fotos/skillwill-fragen.jpg", orte: ["skillwill", "fragen"] },
+  { titel: "Kompetenzstufen", bild: "fotos/kompetenzstufen.jpg", orte: ["skillwill"] },
+  { titel: "Bindung", bild: "fotos/bindung.jpg", orte: ["beduerfnisse"] },
+  { titel: "Orientierung und Kontrolle", bild: "fotos/orientierung.jpg", orte: ["beduerfnisse"] },
+  { titel: "Selbstwertschutz / Erhöhung", bild: "fotos/selbstwert.jpg", orte: ["beduerfnisse"] },
+  { titel: "Lustgewinn / Unlustvermeidung", bild: "fotos/lustgewinn.jpg", orte: ["beduerfnisse"] },
+  { titel: "Ich bin o.k., du bist o.k.", bild: "fotos/ich-bin-ok.jpg", orte: ["augenhoehe"] },
+  { titel: "Brave Dialog", bild: "fotos/brave-dialog.jpg", orte: ["haltung"] },
+  { titel: "Gesprächsstruktur", bild: "fotos/gespraechsstruktur.jpg", orte: ["grow"] },
+  { titel: "Das kann ich gar nicht nachvollziehen!", bild: "fotos/nachvollziehen.jpg", orte: ["schwierig", "klaerung"] },
+  { titel: "Satz-Starter für Kritikgespräche", bild: "fotos/satzstarter.jpg", orte: ["schwierig", "klaerung"] },
+  { titel: "Eisenhower-Matrix", bild: "fotos/eisenhower.jpg", orte: ["druck"] },
 ];
 const FOLIEN = 80; // Anzahl der Folienbilder in folien/
 
