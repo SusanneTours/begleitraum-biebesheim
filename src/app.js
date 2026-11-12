@@ -3,6 +3,7 @@
 const ERGEBNISSE = [
   { titel: "Rückblick auf Tag 1", bild: "fotos/rueckblick-tag1-a.jpg", orte: ["rueckblick"] },
   { titel: "Rückblick auf Tag 1", bild: "fotos/rueckblick-tag1-b.jpg", orte: ["rueckblick"] },
+  { titel: "früher: mehr von oben herab", bild: "fotos/fuehrung-frueher-heute.jpg", orte: ["rollenwechsel"], text: "Führung früher und heute, erklärt am T: Der Querstrich steht für Wissen in der Breite, der Längsstrich für Wissen in der Tiefe." },
   { titel: "Erwartungen an deine Mitarbeiter", bild: "fotos/erwartungen.jpg", orte: ["erwartungen"] },
   { titel: "Skill und Will", bild: "fotos/skillwill-flipchart.jpg", orte: ["skillwill"] },
   { titel: "Euer Führungsverhalten in der Matrix", bild: "fotos/skillwill-pinnwand.jpg", orte: ["skillwill"] },
@@ -63,7 +64,7 @@ document.addEventListener('keydown', e => { if (e.key==='Escape') $('#lightbox')
 /* ---------- Fotos ---------- */
 (function(){
   const g = $('#gallery');
-  const fig = f => `<figure><img loading="lazy" src="${f.bild}" alt="${esc(f.titel)}" data-zoom="${f.bild}"><figcaption>${esc(f.titel)}</figcaption></figure>`;
+  const fig = f => `<figure><img loading="lazy" src="${f.bild}" alt="${esc(f.titel)}" data-zoom="${f.bild}"><figcaption>${esc(f.titel)}${f.text?`<span class="ftext">${esc(f.text)}</span>`:""}</figcaption></figure>`;
   g.innerHTML = ERGEBNISSE.length ? `<div class="gallery">${ERGEBNISSE.map(fig).join('')}</div>` : `<div class="empty">Nach dem Training findest du hier die Fotos unserer Flipcharts und Pinnwände.</div>`;
   document.querySelectorAll('.unsere-fotos[data-ort]').forEach(el => {
     const fs = ERGEBNISSE.filter(f => (f.orte||[]).includes(el.dataset.ort));

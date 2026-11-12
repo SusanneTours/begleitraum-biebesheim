@@ -69,3 +69,5 @@ details.more .b{padding:0 20px 16px}
 .gk-bar{display:grid;grid-template-columns:64px 1fr 28px;gap:10px;align-items:center;margin:8px 0;font-size:15px}
 .gk-track{height:14px;background:#EEE8F6;border-radius:8px;overflow:hidden}.gk-track div{height:100%;border-radius:8px}
 #print-area .card{border:1px solid #ddd;border-radius:8px;padding:8px 10px;margin:8px 0}
+
+.gallery figcaption .ftext{display:block;font-weight:400;margin-top:4px;line-height:1.4}

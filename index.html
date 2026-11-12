@@ -284,6 +284,8 @@ details.more .b{padding:0 20px 16px}
 .gk-track{height:14px;background:#EEE8F6;border-radius:8px;overflow:hidden}.gk-track div{height:100%;border-radius:8px}
 #print-area .card{border:1px solid #ddd;border-radius:8px;padding:8px 10px;margin:8px 0}
 
+.gallery figcaption .ftext{display:block;font-weight:400;margin-top:4px;line-height:1.4}
+
 </style>
 
 </head>
@@ -892,6 +894,13 @@ details.more .b{padding:0 20px 16px}
   <div class="card"><div class="study"><div class="num">2</div><div><h3>Chef spielen</h3><p>Du willst dich beweisen. Der Ton wird plötzlich hart, das Team geht auf Abstand.</p></div></div></div>
   <div class="card"><div class="study"><div class="num">3</div><div><h3>Abtauchen</h3><p>Du gehst schwierigen Gesprächen aus dem Weg und hoffst, dass es sich von selbst regelt.</p></div></div></div>
   <div class="card dk"><span class="eyebrow">Was hilft</span><p style="color:#EDE5FA">Sprich die Veränderung offen an. Sag deinem Team, was sich ändert und was bleibt. Führe mit jeder Person ein Gespräch über gegenseitige Erwartungen.</p><p class="quote" style="color:#fff">„Für uns alle ist das neu. Mir ist wichtig, dass wir offen darüber reden, wie wir jetzt zusammenarbeiten.“</p></div>
+  <h3 class="sec">Führung früher und heute</h3>
+  <div class="grid3">
+    <div class="card lav"><span class="eyebrow">Früher</span><h3>Wer am längsten dabei war</h3><p>Die Führungskraft hatte das breite Wissen (der Querstrich des T) und das tiefe Fachwissen (der Längsstrich). Das Team wusste etwas weniger. Als Chef hatte man das Sagen.</p></div>
+    <div class="card lav"><span class="eyebrow">Heute</span><h3>Breite oben, Tiefe im Team</h3><p>Themen werden komplexer. Du hast vor allem das breite Wissen: dein Netzwerk, die Abläufe im Haus, den Überblick über das Thema. Das tiefe Expertenwissen liegt oft bei deinen Mitarbeitenden.</p></div>
+    <div class="card lav"><span class="eyebrow">Wichtig</span><h3>Mach es transparent</h3><p>Du musst nicht das beste Expertenwissen haben. Deine Aufgabe ist, den Bereich zu führen, mit deinem breiten Wissen. Sag das offen.</p></div>
+  </div>
+  <div class="unsere-fotos" data-ort="rollenwechsel"></div>
   <a class="btn ghost" href="#erwartungen">→ Weiter: Erwartungen klären</a>
   <div style="height:20px"></div>
 </section>
@@ -1134,6 +1143,7 @@ details.more .b{padding:0 20px 16px}
 const ERGEBNISSE = [
   { titel: "Rückblick auf Tag 1", bild: "fotos/rueckblick-tag1-a.jpg", orte: ["rueckblick"] },
   { titel: "Rückblick auf Tag 1", bild: "fotos/rueckblick-tag1-b.jpg", orte: ["rueckblick"] },
+  { titel: "früher: mehr von oben herab", bild: "fotos/fuehrung-frueher-heute.jpg", orte: ["rollenwechsel"], text: "Führung früher und heute, erklärt am T: Der Querstrich steht für Wissen in der Breite, der Längsstrich für Wissen in der Tiefe." },
   { titel: "Erwartungen an deine Mitarbeiter", bild: "fotos/erwartungen.jpg", orte: ["erwartungen"] },
   { titel: "Skill und Will", bild: "fotos/skillwill-flipchart.jpg", orte: ["skillwill"] },
   { titel: "Euer Führungsverhalten in der Matrix", bild: "fotos/skillwill-pinnwand.jpg", orte: ["skillwill"] },
@@ -1194,7 +1204,7 @@ document.addEventListener('keydown', e => { if (e.key==='Escape') $('#lightbox')
 /* ---------- Fotos ---------- */
 (function(){
   const g = $('#gallery');
-  const fig = f => `<figure><img loading="lazy" src="${f.bild}" alt="${esc(f.titel)}" data-zoom="${f.bild}"><figcaption>${esc(f.titel)}</figcaption></figure>`;
+  const fig = f => `<figure><img loading="lazy" src="${f.bild}" alt="${esc(f.titel)}" data-zoom="${f.bild}"><figcaption>${esc(f.titel)}${f.text?`<span class="ftext">${esc(f.text)}</span>`:""}</figcaption></figure>`;
   g.innerHTML = ERGEBNISSE.length ? `<div class="gallery">${ERGEBNISSE.map(fig).join('')}</div>` : `<div class="empty">Nach dem Training findest du hier die Fotos unserer Flipcharts und Pinnwände.</div>`;
   document.querySelectorAll('.unsere-fotos[data-ort]').forEach(el => {
     const fs = ERGEBNISSE.filter(f => (f.orte||[]).includes(el.dataset.ort));
